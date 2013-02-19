@@ -72,7 +72,6 @@ class TwigContentController extends ContentController
         if ($params) {
             $obj = $this->customise($params);
         }
-
         return $this->renderTwig($this->getTemplateList($this->getAction()), $obj);
     }
 
