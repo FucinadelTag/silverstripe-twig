@@ -49,6 +49,12 @@ class TwigContainer extends Pimple
                 $envOptions
             );
 
+            $translateFunction = new Twig_SimpleFunction('_t', function ($entity, $string = "", $context = "", $injection = "") {
+                return (_t ($entity, $string , $context, $injection));
+            });
+
+            $twig->addFunction($translateFunction);
+
             if (isset($envOptions['debug']) && $envOptions['debug']) {
                 $twig->addExtension(new Twig_Extension_Debug());
             }

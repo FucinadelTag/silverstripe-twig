@@ -70,6 +70,7 @@ trait TwigControllerTrait
     {
         return $this->getTwigTemplate($templates)->render(array(
             $this->dic['twig.controller_variable_name'] => $context
+
         ));
     }
 
@@ -100,6 +101,7 @@ trait TwigControllerTrait
 
     protected function getTemplateList($action = null)
     {
+
         // Hard-coded templates
         if ($this->templates[$action]) {
             $templates = $this->templates[$action];
